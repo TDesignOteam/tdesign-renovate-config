@@ -1,0 +1,13 @@
+{
+  "name": "tdesign-renovate-config",
+  "description": "renovate tdesign config",
+  "scripts": {
+    "test": "renovate-config-validator ./presets.json5 --strict"
+  },
+  "author": "tdesign",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "renovate": "^41.43.5"
+  }
+}
