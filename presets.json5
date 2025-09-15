@@ -6,5 +6,5 @@
     "group:allNonMajor"
   ],
   "ignoreDeps": ["node"]
-  "rangeStrategy": "replace",
+  "rangeStrategy": "bump",
 }
