@@ -5,6 +5,6 @@
     "schedule:weekly",
     "group:allNonMajor"
   ],
-  "ignoreDeps": ["node"]
+  "ignoreDeps": ["node"],
   "rangeStrategy": "bump",
 }
