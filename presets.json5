@@ -6,6 +6,5 @@
     "group:allNonMajor"
   ],
   "ignoreDeps": ["node"]
-  // https://docs.renovatebot.com/modules/versioning/cargo/#rangesconstraints
-  "rangeStrategy": "bump",
+  "rangeStrategy": "replace",
 }
