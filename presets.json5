@@ -7,4 +7,13 @@
   ],
   "ignoreDeps": ["node"],
   "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "groupName": "github-actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "rangeStrategy": "auto"
+    }
+  ]
 }
