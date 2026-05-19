@@ -9,6 +9,12 @@
   rangeStrategy: "bump",
   // 包更新规则
   packageRules: [
+    // TDesignOteam/workflows 例外：不限制 release 天数
+    {
+      matchRepositories: ["TDesignOteam/workflows"],
+      matchManagers: ["github-actions"],
+      minimumReleaseAge: null,
+    },
     // GitHub Actions 工作流依赖规则
     {
       groupName: "github-actions",
