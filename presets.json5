@@ -1,19 +1,14 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "schedule:weekly",
-    "group:allNonMajor"
-  ],
-  "ignoreDeps": ["node"],
-  "rangeStrategy": "bump",
-  "packageRules": [
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  ignoreDeps: ["node"],
+  rangeStrategy: "bump",
+  packageRules: [
     {
-      "groupName": "github-actions",
-      "matchManagers": [
-        "github-actions"
-      ],
-      "rangeStrategy": "auto"
-    }
-  ]
+      groupName: "github-actions",
+      matchManagers: ["github-actions"],
+      pinDigests: true,
+      rangeStrategy: "auto",
+    },
+  ],
 }
