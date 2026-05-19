@@ -1,14 +1,35 @@
 {
+  // Renovate 配置文件
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  // 继承基础配置：推荐配置、每周定时、非主要版本合并
   extends: ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  // 忽略的依赖项
   ignoreDeps: ["node"],
+  // 依赖范围策略：bump 表示直接升级版本号
   rangeStrategy: "bump",
+  // 包更新规则
   packageRules: [
+    // GitHub Actions 工作流依赖规则
     {
       groupName: "github-actions",
       matchManagers: ["github-actions"],
+      // 锁定 action 镜像摘要
       pinDigests: true,
+      // 范围策略：auto 自动选择
       rangeStrategy: "auto",
+      // 新版本发布后必须满 3 天才提 PR，避免刚发布就更新导致的兼容性问题
+      minimumReleaseAge: "3 days",
+    },
+    // npm 依赖规则
+    {
+      matchManagers: ["npm"],
+      // npm 依赖更严格，必须发布满 7 天才允许提 PR
+      minimumReleaseAge: "7 days",
+    },
+    // 禁用 peerDependencies 更新
+    {
+      matchDepTypes: ["peerDependencies"],
+      enabled: false,
     },
   ],
 }
