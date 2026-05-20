@@ -13,7 +13,7 @@
     {
       matchRepositories: ["TDesignOteam/workflows"],
       matchManagers: ["github-actions"],
-      minimumReleaseAge: 0,
+      minimumReleaseAge: "0 days",
     },
     // GitHub Actions 工作流依赖规则
     {
