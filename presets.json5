@@ -9,13 +9,6 @@
   rangeStrategy: "bump",
   // 包更新规则
   packageRules: [
-    // TDesignOteam/workflows 例外：跳过 minimumReleaseAge 检查
-    {
-      matchManagers: ["github-actions"],
-      matchPackageNames: ["TDesignOteam/workflows"],
-      minimumReleaseAge: "0 days",
-      internalChecksFilter: "strict",
-    },
     // GitHub Actions 工作流依赖规则
     {
       groupName: "github-actions",
@@ -26,6 +19,13 @@
       rangeStrategy: "auto",
       // 新版本发布后必须满 3 天才提 PR，避免刚发布就更新导致的兼容性问题
       minimumReleaseAge: "3 days",
+    },
+    // TDesignOteam/workflows 例外：必须放在 github-actions 通用规则后面，否则会被 3 days 覆盖
+    {
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["TDesignOteam/workflows"],
+      minimumReleaseAge: "0 days",
+      internalChecksFilter: "strict",
     },
     // npm 依赖规则
     {
