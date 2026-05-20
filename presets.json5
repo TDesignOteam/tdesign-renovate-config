@@ -9,10 +9,11 @@
   rangeStrategy: "bump",
   // 包更新规则
   packageRules: [
-    // TDesignOteam/workflows 例外：不限制 release 天数
+    // TDesignOteam/workflows 例外：跳过 minimumReleaseAge 检查
     {
+      matchManagers: ["github-actions"],
       matchPackageNames: ["/TDesignOteam/workflows/"],
-      minimumReleaseAge: "0 days",
+      minimumReleaseAge: null,
     },
     // GitHub Actions 工作流依赖规则
     {
