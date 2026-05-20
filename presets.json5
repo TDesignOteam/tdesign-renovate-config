@@ -11,8 +11,7 @@
   packageRules: [
     // TDesignOteam/workflows 例外：不限制 release 天数
     {
-      matchRepositories: ["TDesignOteam/workflows"],
-      matchManagers: ["github-actions"],
+      matchPackagePatterns: ["TDesignOteam/workflows"],
       minimumReleaseAge: "0 days",
     },
     // GitHub Actions 工作流依赖规则
