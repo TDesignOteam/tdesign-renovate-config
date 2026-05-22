@@ -21,8 +21,8 @@
     // npm 依赖规则
     {
       matchManagers: ["npm"],
-      // npm 依赖更严格，必须发布满 7 天才允许提 PR
-      minimumReleaseAge: "7 days",
+      // 发布满 1 天才提 PR
+      minimumReleaseAge: "1 days",
     },
     // 禁用 peerDependencies 更新
     {
