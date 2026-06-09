@@ -1,7 +1,7 @@
 {
   // Renovate 配置文件
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  // 继承基础配置：推荐配置、每周定时、非主要版本合并
+  // 继承基础配置：推荐配置、每周定时
   extends: ["config:recommended", "schedule:weekly"],
   // 忽略的依赖项
   ignoreDeps: ["node"],
