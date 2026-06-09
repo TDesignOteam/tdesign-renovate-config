@@ -2,13 +2,19 @@
   // Renovate 配置文件
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   // 继承基础配置：推荐配置、每周定时、非主要版本合并
-  extends: ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  extends: ["config:recommended", "schedule:weekly"],
   // 忽略的依赖项
   ignoreDeps: ["node"],
   // 依赖范围策略：bump 表示直接升级版本号
   rangeStrategy: "bump",
   // 包更新规则
   packageRules: [
+    {
+      groupName: "all patch dependencies",
+      groupSlug: "all-patch",
+      matchPackageNames: ["*"],
+      matchUpdateTypes: ["patch"],
+    },
     // GitHub Actions 工作流依赖规则
     {
       groupName: "github-actions",
