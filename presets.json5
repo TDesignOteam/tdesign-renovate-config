@@ -24,6 +24,11 @@
       // 范围策略：auto 自动选择
       rangeStrategy: "auto",
     },
+    {
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["TDesignOteam/workflows"],
+      pinDigests: false,
+    },
     // npm 依赖规则
     {
       matchManagers: ["npm"],
